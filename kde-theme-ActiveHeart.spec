@@ -19,7 +19,6 @@ URL:		http://www.kde-look.org/content/show.php?content=11384
 #See also:	http://www.kde-look.org/content/show.php?content=11460
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	freetype-devel
 BuildRequires:	kdelibs-devel >= 9:3.2.0
 BuildRequires:	kdebase-desktop-libs >= 9:3.2.0
 BuildRequires:	unsermake
@@ -67,7 +66,7 @@ Summary(pl):	Dekoracja kwin - %{_name}
 Group:		Themes
 Epoch:		1
 Version:	%{_kwin_ver}
-Url:		http://www.kde-look.org/content/show.php?content=11460
+URL:		http://www.kde-look.org/content/show.php?content=11460
 Requires:	kdebase-desktop-libs >= 9:3.2.0
 
 %description -n kde-decoration-%{_name}
@@ -82,43 +81,32 @@ obszrze z zaokr±glonymi brzegami. Obszar ten sprawia wra¿enie
 l¶ni±cego.
 
 %prep
-# setup with -a1 broke unsermake and i understand we shouldnt build
-# outside the builddir, so here goes:
-
-cd $RPM_BUILD_DIR
-if [ -d %{name}-%{version} ]; then
-rm -rf %{name}-%{version}
-fi
-mkdir %{name}-%{version}
-cd %{name}-%{version}
-%{__tar} xfj %{SOURCE0} -C ./
-%{__tar} xfj %{SOURCE1} -C ./
+%setup -q -c -a1
 
 %build
-cd $RPM_BUILD_DIR/%{name}-%{version}/%{__name}-%{_style_ver}
+cd %{__name}-%{_style_ver}
 cp -f %{_datadir}/automake/config.sub admin
 export UNSERMAKE=%{_datadir}/unsermake/unsermake
 %{__make} -f Makefile.cvs
-%configure
+%configure \
+	--with-qt-libraries=%{_libdir}
 %{__make}
 
-cd $RPM_BUILD_DIR/%{name}-%{version}/kwin-%{__name}-%{_kwin_ver}
+cd ../kwin-%{__name}-%{_kwin_ver}
 cp -f /usr/share/automake/config.sub admin
 export UNSERMAKE=/usr/share/unsermake/unsermake
 %{__make} -f Makefile.cvs
-%configure
+%configure \
+	--with-qt-libraries=%{_libdir}
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT
 
-cd $RPM_BUILD_DIR/%{name}-%{version}/%{__name}-%{_style_ver}
-%{__make} install \
+%{__make} -C %{__name}-%{_style_ver} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-cd $RPM_BUILD_DIR/%{name}-%{version}/kwin-%{__name}-%{_kwin_ver}
-%{__make} install \
+%{__make} -C kwin-%{__name}-%{_kwin_ver} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
 %clean

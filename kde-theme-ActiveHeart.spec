@@ -27,10 +27,12 @@ Requires:	kdelibs
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-%{_name} is
+The concept of ActiveHeart theme is a harmony of sharpness and
+softness. And this style was created based on keramik.
 
 %description -l pl
-%{_name} a theme
+Ide± motywu ActiveHeart jest harmonia miêdzy ostro¶ci± a ³agodno¶ci±.
+Ten styl zosta³ stworzony w oparciu o keramik.
 
 %package -n kde-style-%{_name}
 Summary:	KDE style - %{_name}
@@ -39,12 +41,12 @@ Group:		Themes
 Requires:	kdelibs
 
 %description -n kde-style-%{_name}
-%{_name} is a slicker style that was designed to look nice with
+ActiveHeart is a slicker style that was designed to look nice with
 slicker. To developer's surprise, this style looks good even without
 slicker.
 
 %description -n kde-style-%{_name} -l pl
-%{_name} to styl stworzony by wspó³gra³ z aplikacj± slicker. Ku
+ActiveHeart to styl stworzony by wspó³gra³ z aplikacj± slicker. Ku
 zaskoczeniu twórców, styl ten jednak okaza³ siê piêknie wygl±daæ nawet
 bez slickera.
 
@@ -55,11 +57,11 @@ Group:		Themes
 Requires:	kdelibs
 
 %description -n kde-icons-%{_name}
-%{_name} is a slicker icons theme that was designed to look nice with
-slicker style.
+ActiveHeart is a slicker icons theme that was designed to look nice
+with slicker style.
 
 %description -n kde-icons-%{_name} -l pl
-%{_name} to motyw ikon stworzony by wspó³gra³ ze stylem slicker.
+ActiveHeart to motyw ikon stworzony by wspó³gra³ ze stylem slicker.
 
 %package -n kde-colorscheme-%{_name}
 Summary:	Color scheme for KDE style - %{_name}
@@ -68,11 +70,10 @@ Group:		Themes
 Requires:	kdebase-core
 
 %description -n kde-colorscheme-%{_name}
-Color scheme for KDE style - %{_name}
+Color scheme for KDE style - %{_name}.
 
 %description -n kde-colorscheme-%{_name} -l pl
-Schemat kolorów do stylu KDE - %{_name}
-
+Schemat kolorów do stylu KDE - %{_name}.
 
 %package -n kde-wallpaper-%{_name}
 Summary:	KDE wallpaper - %{_name}
@@ -94,11 +95,10 @@ Group:		X11/Amusements
 Requires:	kdebase-desktop
 
 %description -n kde-splashplugin-%{_name}
-ksplash plugin %{_name}
+ksplash plugin %{_name}.
 
 %description -n kde-splashplugin-%{_name} -l pl
-Wtyczka ksplash %{_name}
-
+Wtyczka ksplash %{_name}.
 
 %package -n kde-colorscheme-%{_name}-thinkeramik
 Summary:	Color scheme for %{_name} theme to go with thinkeramik style
@@ -188,23 +188,22 @@ Icewm window decoration for kwin - %{_name}.
 %description -n kde-decoration-icewm-%{_name} -l pl
 Dekoracja icewm dla kwin - %{_name}.
 
-
 %prep
-%setup -q -n %{__name}-%{_style_ver} -b1
+%setup -q -n %{__name}-%{_style_ver} -a1
 %patch0 -p1
 
 %build
 kde_htmldir="%{_kdedocdir}"; export kde_htmldir
 kde_icondir="%{_iconsdir}"; export kde_icondir
-cp /usr/share/automake/config.sub admin
+cp -f /usr/share/automake/config.sub admin
 export UNSERMAKE=/usr/share/unsermake/unsermake
 %{__make} -f Makefile.cvs
 
 %configure
 %{__make}
 
-cd ../kwin-%{__name}-%{_kwin_ver}
-cp /usr/share/automake/config.sub admin
+cd kwin-%{__name}-%{_kwin_ver}
+cp -f /usr/share/automake/config.sub admin
 export UNSERMAKE=/usr/share/unsermake/unsermake
 %{__make} -f Makefile.cvs
 %configure
@@ -212,18 +211,16 @@ export UNSERMAKE=/usr/share/unsermake/unsermake
 
 %install
 rm -rf $RPM_BUILD_ROOT
-# create dirs if necessary
 install -d $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-cd ../kwin-%{__name}-%{_kwin_ver}
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} -C kwin-%{__name}-%{_kwin_ver} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
-
 
 %files -n kde-style-%{_name}
 %defattr(644,root,root,755)

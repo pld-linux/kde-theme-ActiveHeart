@@ -8,13 +8,14 @@ Summary:        KDE theme - %{_name}
 Summary(pl):    Motyw KDE - %{_name}
 Name:           kde-theme-%{_name}
 Version:        %{_style_ver}
-Release:        1
+Release:        2
 License:        GPL
 Group:          Themes
 Source0:	http://www.kde-look.org/content/files/11384-%{__name}-%{version}.tar.bz2
 # Source0-md5:	c08a703fad663c600290416030c4baea
 Source1:	http://www.kde-look.org/content/files/11460-kwin-%{__name}-1.0.2.tar.bz2
 # Source1-md5:	5304ed670c7212961631ace667167c43
+Patch0:		%{name}-global_cs.patch
 URL:		http://www.kde-look.org/content/show.php?content=11384
 #See also:	http://www.kde-look.org/content/show.php?content=11460
 BuildRequires:	autoconf
@@ -189,7 +190,8 @@ Dekoracja icewm dla kwin - %{_name}.
 
 
 %prep
-%setup -q -n %{__name}-%{version} -b1
+%setup -q -n %{__name}-%{_style_ver} -b1
+%patch0 -p1
 
 %build
 kde_htmldir="%{_kdedocdir}"; export kde_htmldir

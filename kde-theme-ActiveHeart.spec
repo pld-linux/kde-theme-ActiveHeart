@@ -8,13 +8,14 @@ Summary:	KDE theme - %{_name}
 Summary(pl):	Motyw KDE - %{_name}
 Name:		kde-theme-%{_name}
 Version:	%{_style_ver}
-Release:	1
+Release:	2
 License:	GPL
 Group:		Themes
 Source0:	http://www.kde-look.org/content/files/11384-%{__name}-%{version}.tar.bz2
 # Source0-md5:	80421708a5cfe26d75819bf618194e16
 Source1:	http://www.kde-look.org/content/files/11460-kwin-%{__name}-%{_kwin_ver}.tar.bz2
 # Source1-md5:	3e51a661dfce595469af0c39d483ff21
+Patch0:		%{_name}-paths.patch
 URL:		http://www.kde-look.org/content/show.php?content=11384
 #See also:	http://www.kde-look.org/content/show.php?content=11460
 BuildRequires:	autoconf
@@ -82,7 +83,7 @@ l¶ni±cego.
 
 %prep
 %setup -q -c -a1
-
+%patch0 -p0
 %build
 cd %{__name}-%{_style_ver}
 cp -f %{_datadir}/automake/config.sub admin

@@ -1,16 +1,16 @@
 
-%define         _name ActiveHeart
-%define		__name	activeheart
-%define		_style_ver 1.1.7
-%define		_kwin_ver 1.0.2
+%define		_name		ActiveHeart
+%define		__name		activeheart
+%define		_style_ver	1.1.7
+%define		_kwin_ver	1.0.2
 
-Summary:        KDE theme - %{_name}
-Summary(pl):    Motyw KDE - %{_name}
-Name:           kde-theme-%{_name}
-Version:        %{_style_ver}
-Release:        2
-License:        GPL
-Group:          Themes
+Summary:	KDE theme - %{_name}
+Summary(pl):	Motyw KDE - %{_name}
+Name:		kde-theme-%{_name}
+Version:	%{_style_ver}
+Release:	2
+License:	GPL
+Group:		Themes
 Source0:	http://www.kde-look.org/content/files/11384-%{__name}-%{version}.tar.bz2
 # Source0-md5:	c08a703fad663c600290416030c4baea
 Source1:	http://www.kde-look.org/content/files/11460-kwin-%{__name}-1.0.2.tar.bz2
@@ -33,10 +33,10 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %{_name} a theme
 
 %package -n kde-style-%{_name}
-Summary:        KDE style - %{_name}
-Summary(pl):    Styl do KDE - %{_name}
-Group:          Themes
-Requires:       kdelibs
+Summary:	KDE style - %{_name}
+Summary(pl):	Styl do KDE - %{_name}
+Group:		Themes
+Requires:	kdelibs
 
 %description -n kde-style-%{_name}
 %{_name} is a slicker style that was designed to look nice with
@@ -49,10 +49,10 @@ zaskoczeniu twórców, styl ten jednak okaza³ siê piêknie wygl±daæ nawet
 bez slickera.
 
 %package -n kde-icons-%{_name}
-Summary:        KDE style - %{_name}
-Summary(pl):    Styl do KDE - %{_name}
-Group:          Themes
-Requires:       kdelibs
+Summary:	KDE style - %{_name}
+Summary(pl):	Styl do KDE - %{_name}
+Group:		Themes
+Requires:	kdelibs
 
 %description -n kde-icons-%{_name}
 %{_name} is a slicker icons theme that was designed to look nice with
@@ -62,10 +62,10 @@ slicker style.
 %{_name} to motyw ikon stworzony by wspó³gra³ ze stylem slicker.
 
 %package -n kde-colorscheme-%{_name}
-Summary:        Color scheme for KDE style - %{_name}
-Summary(pl):    Schemat kolorów do stylu KDE - %{_name}
-Group:          Themes
-Requires:       kdebase-core
+Summary:	Color scheme for KDE style - %{_name}
+Summary(pl):	Schemat kolorów do stylu KDE - %{_name}
+Group:		Themes
+Requires:	kdebase-core
 
 %description -n kde-colorscheme-%{_name}
 Color scheme for KDE style - %{_name}
@@ -75,11 +75,11 @@ Schemat kolorów do stylu KDE - %{_name}
 
 
 %package -n kde-wallpaper-%{_name}
-Summary:        KDE wallpaper - %{_name}
-Summary(pl):    Tapeta do KDE - %{_name}
-Group:          Themes
+Summary:	KDE wallpaper - %{_name}
+Summary(pl):	Tapeta do KDE - %{_name}
+Group:		Themes
 # Contains /usr/share/wallpapers
-Requires:       kdelibs
+Requires:	kdelibs
 
 %description -n kde-wallpaper-%{_name}
 A wallpaper to go with KDE slicker style.
@@ -88,10 +88,10 @@ A wallpaper to go with KDE slicker style.
 Tapeta pasuj±ca do stylu KDE slicker.
 
 %package -n kde-splashplugin-%{_name}
-Summary:        ksplash plugin %{_name}
-Summary(pl):    Wtyczka ksplash %{_name}
-Group:          X11/Amusements
-Requires:       kdebase-desktop
+Summary:	ksplash plugin %{_name}
+Summary(pl):	Wtyczka ksplash %{_name}
+Group:		X11/Amusements
+Requires:	kdebase-desktop
 
 %description -n kde-splashplugin-%{_name}
 ksplash plugin %{_name}
@@ -101,11 +101,11 @@ Wtyczka ksplash %{_name}
 
 
 %package -n kde-colorscheme-%{_name}-thinkeramik
-Summary:        Color scheme for %{_name} theme to go with thinkeramik style
-Summary(pl):    Schemat kolorów dla motywu %{_name} pasuj±cy do stylu thinkeramik
-Group:          Themes
-Requires:       kdebase-core
-Requires:       kde-style-thinkeramik
+Summary:	Color scheme for %{_name} theme to go with thinkeramik style
+Summary(pl):	Schemat kolorów dla motywu %{_name} pasuj±cy do stylu thinkeramik
+Group:		Themes
+Requires:	kdebase-core
+Requires:	kde-style-thinkeramik
 
 %description -n kde-colorscheme-%{_name}-thinkeramik
 Color scheme for %{_name} theme to go with thinkeramik style.
@@ -114,11 +114,11 @@ Color scheme for %{_name} theme to go with thinkeramik style.
 Schemat kolorów dla motywu %{_name} pasuj±cy do stylu thinkeramik.
 
 %package -n kde-decoration-%{_name}
-Summary:        Kwin decoration - %{_name}
-Summary(pl):    Dekoracja kwin - %{_name}
-Group:          Themes
-Version:        %{_kwin_ver}
-Requires:       kdebase-desktop-libs
+Summary:	Kwin decoration - %{_name}
+Summary(pl):	Dekoracja kwin - %{_name}
+Group:		Themes
+Version:	%{_kwin_ver}
+Requires:	kdebase-desktop-libs
 
 %description -n kde-decoration-%{_name}
 Kwin decoration - %{_name}.
@@ -127,10 +127,10 @@ Kwin decoration - %{_name}.
 Dekoracja kwin - %{_name}.
 
 %package -n kde-splash-%{_name}
-Summary:        Splash screen %{_name} theme
-Summary(pl):    Obrazek startowy dla motywu %{_name}
-Group:          Themes
-Requires:       kdebase-desktop >= 9:3.1.90
+Summary:	Splash screen %{_name} theme
+Summary(pl):	Obrazek startowy dla motywu %{_name}
+Group:		Themes
+Requires:	kdebase-desktop >= 9:3.1.90
 
 %description -n kde-splash-%{_name}
 Splash screen %{_name} theme.
@@ -139,12 +139,12 @@ Splash screen %{_name} theme.
 Obrazek startowy dla motywu %{_name}.
 
 %package -n kde-kside-%{_name}
-Summary:        Kicker sidebar from %{_name}
-Summary(pl):    Boczny pasek do menu kde z motywu %{_name}
-Group:          Themes
-Obsoletes:      kde-kside
-Provides:       kde-kside
-Requires:       kdebase-kicker >= 9:3.1.90.030726-2
+Summary:	Kicker sidebar from %{_name}
+Summary(pl):	Boczny pasek do menu kde z motywu %{_name}
+Group:		Themes
+Obsoletes:	kde-kside
+Provides:	kde-kside
+Requires:	kdebase-kicker >= 9:3.1.90.030726-2
 
 %description -n kde-kside-%{_name}
 Kicker sidebar from %{_name}.
@@ -153,10 +153,10 @@ Kicker sidebar from %{_name}.
 Boczny pasek do menu kde z motywu %{_name}.
 
 %package -n kopete-emoticons-%{_name}
-Summary:        Kopete emoticons from %{_name} theme
-Summary(pl):    Emotikony do kopete z tematu %{_name}
-Group:          Themes
-Requires:       kdenetwork-kopete
+Summary:	Kopete emoticons from %{_name} theme
+Summary(pl):	Emotikony do kopete z tematu %{_name}
+Group:		Themes
+Requires:	kdenetwork-kopete
 
 %description -n kopete-emoticons-%{_name}
 Kopete emoticons from %{_name} theme.
@@ -165,10 +165,10 @@ Kopete emoticons from %{_name} theme.
 Emotikony do kopete z tematu %{_name}.
 
 %package -n xmms-skin-%{_name}
-Summary:        An xmms skin %{_name} theme
-Summary(pl):    Skórka dla XMMS-a z motywu %{_name}
-Group:          Themes
-Requires:       xmms
+Summary:	An xmms skin %{_name} theme
+Summary(pl):	Skórka dla XMMS-a z motywu %{_name}
+Group:		Themes
+Requires:	xmms
 
 %description -n xmms-skin-%{_name}
 An xmms skin %{_name} theme.
@@ -177,10 +177,10 @@ An xmms skin %{_name} theme.
 Skórka dla XMMS-a z motywu %{_name}.
 
 %package -n kde-decoration-icewm-%{_name}
-Summary:        Icewm window decoration for kwin - %{_name}
-Summary(pl):    Dekoracja icewm dla kwin - %{_name}
-Group:          Themes
-Requires:       kde-decoration-icewm
+Summary:	Icewm window decoration for kwin - %{_name}
+Summary(pl):	Dekoracja icewm dla kwin - %{_name}
+Group:		Themes
+Requires:	kde-decoration-icewm
 
 %description -n kde-decoration-icewm-%{_name}
 Icewm window decoration for kwin - %{_name}.

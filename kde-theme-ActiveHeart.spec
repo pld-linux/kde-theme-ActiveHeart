@@ -1,5 +1,5 @@
 
-%define         _name ActiveHeart
+%define		_name ActiveHeart
 %define		__name	activeheart
 %define		_style_ver 1.2.1
 %define		_kwin_ver 1.1
@@ -8,7 +8,7 @@ Summary:	KDE theme - %{_name}
 Summary(pl):	Motyw KDE - %{_name}
 Name:		kde-theme-%{_name}
 Version:	%{_style_ver}
-Release:	2
+Release:	3
 License:	GPL
 Group:		Themes
 Source0:	http://www.kde-look.org/content/files/11384-%{__name}-%{version}.tar.bz2
@@ -23,7 +23,9 @@ BuildRequires:	automake
 BuildRequires:	kdelibs-devel >= 9:3.2.0
 BuildRequires:	kdebase-desktop-libs >= 9:3.2.0
 BuildRequires:	unsermake
-Requires:	kdelibs
+Requires:	kde-style-%{_name}
+Requires:	kde-colorscheme-%{_name}
+Requires:	kde-decoration-%{_name}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -112,6 +114,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%files
 
 %files -n kde-style-%{_name}
 %defattr(644,root,root,755)

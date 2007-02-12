@@ -5,7 +5,7 @@
 %define		_kwin_ver 1.1
 
 Summary:	KDE theme - %{_name}
-Summary(pl):	Motyw KDE - %{_name}
+Summary(pl.UTF-8):   Motyw KDE - %{_name}
 Name:		kde-theme-%{_name}
 Version:	%{_style_ver}
 Release:	3
@@ -32,26 +32,26 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 The concept of ActiveHeart theme is a harmony of sharpness and
 softness. And this style was created based on keramik.
 
-%description -l pl
-Ide± motywu ActiveHeart jest harmonia miêdzy ostro¶ci± a ³agodno¶ci±.
-Ten styl zosta³ stworzony w oparciu o keramik.
+%description -l pl.UTF-8
+IdeÄ… motywu ActiveHeart jest harmonia miÄ™dzy ostroÅ›ciÄ… a Å‚agodnoÅ›ciÄ….
+Ten styl zostaÅ‚ stworzony w oparciu o keramik.
 
 %package -n kde-style-%{_name}
 Summary:	KDE style - %{_name}
-Summary(pl):	Styl do KDE - %{_name}
+Summary(pl.UTF-8):   Styl do KDE - %{_name}
 Group:		Themes
 
 %description -n kde-style-%{_name}
 A higly customizable convex style which feature a unique, soft look
 while preserving sharpness.
 
-%description -n kde-style-%{_name} -l pl
-Dostosowywalny, wypuk³y styl tworz±cy miêkki i lekki wygl±d z
-zachowaniem ostro¶ci obrazu.
+%description -n kde-style-%{_name} -l pl.UTF-8
+Dostosowywalny, wypukÅ‚y styl tworzÄ…cy miÄ™kki i lekki wyglÄ…d z
+zachowaniem ostroÅ›ci obrazu.
 
 %package -n kde-colorscheme-%{_name}
 Summary:	Color scheme for KDE style - %{_name}
-Summary(pl):	Schemat kolorów do stylu KDE - %{_name}
+Summary(pl.UTF-8):   Schemat kolorÃ³w do stylu KDE - %{_name}
 Group:		Themes
 Requires:	kdebase-core
 
@@ -59,13 +59,13 @@ Requires:	kdebase-core
 A tranquil colorscheme with sand-colored window background and violet
 selections.
 
-%description -n kde-colorscheme-%{_name} -l pl
-Stonowany schemat kolorów z t³em okien w kolorze piasku i fioletowymi
+%description -n kde-colorscheme-%{_name} -l pl.UTF-8
+Stonowany schemat kolorÃ³w z tÅ‚em okien w kolorze piasku i fioletowymi
 zaznaczeniami.
 
 %package -n kde-decoration-%{_name}
 Summary:	Kwin decoration - %{_name}
-Summary(pl):	Dekoracja kwin - %{_name}
+Summary(pl.UTF-8):   Dekoracja kwin - %{_name}
 Group:		Themes
 Epoch:		1
 Version:	%{_kwin_ver}
@@ -77,11 +77,11 @@ A kwin decoration with shadows under buttons and solid window borders.
 The buttons and the window title are placed in a rectangular (with
 rounded corners), convex area which has a shiny look.
 
-%description -n kde-decoration-%{_name} -l pl
+%description -n kde-decoration-%{_name} -l pl.UTF-8
 Dekoracja kwin z cieniami pod przyciskami oraz solidnymi brzegami
-okien. Przyciski i tytu³ okna s± umieszczone na prostok±tnym, wypuk³ym
-obszrze z zaokr±glonymi brzegami. Obszar ten sprawia wra¿enie
-l¶ni±cego.
+okien. Przyciski i tytuÅ‚ okna sÄ… umieszczone na prostokÄ…tnym, wypukÅ‚ym
+obszrze z zaokrÄ…glonymi brzegami. Obszar ten sprawia wraÅ¼enie
+lÅ›niÄ…cego.
 
 %prep
 %setup -q -c -a1

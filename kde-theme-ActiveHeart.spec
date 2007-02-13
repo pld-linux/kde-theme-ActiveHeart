@@ -5,7 +5,7 @@
 %define		_kwin_ver 1.1
 
 Summary:	KDE theme - %{_name}
-Summary(pl.UTF-8):   Motyw KDE - %{_name}
+Summary(pl.UTF-8):	Motyw KDE - %{_name}
 Name:		kde-theme-%{_name}
 Version:	%{_style_ver}
 Release:	3
@@ -38,7 +38,7 @@ Ten styl został stworzony w oparciu o keramik.
 
 %package -n kde-style-%{_name}
 Summary:	KDE style - %{_name}
-Summary(pl.UTF-8):   Styl do KDE - %{_name}
+Summary(pl.UTF-8):	Styl do KDE - %{_name}
 Group:		Themes
 
 %description -n kde-style-%{_name}
@@ -51,7 +51,7 @@ zachowaniem ostrości obrazu.
 
 %package -n kde-colorscheme-%{_name}
 Summary:	Color scheme for KDE style - %{_name}
-Summary(pl.UTF-8):   Schemat kolorów do stylu KDE - %{_name}
+Summary(pl.UTF-8):	Schemat kolorów do stylu KDE - %{_name}
 Group:		Themes
 Requires:	kdebase-core
 
@@ -65,7 +65,7 @@ zaznaczeniami.
 
 %package -n kde-decoration-%{_name}
 Summary:	Kwin decoration - %{_name}
-Summary(pl.UTF-8):   Dekoracja kwin - %{_name}
+Summary(pl.UTF-8):	Dekoracja kwin - %{_name}
 Group:		Themes
 Epoch:		1
 Version:	%{_kwin_ver}
